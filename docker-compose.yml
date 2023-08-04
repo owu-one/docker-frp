@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  frpc:
+    container_name: frpc
+    image: ghcr.io/owu-one/frpc:latest
+    network_mode: "host"
+    restart: always
+    volumes:
+      - ./frpc.ini:/frpc.ini
+    
+  frps:
+    container_name: frps
+    image: ghcr.io/owu-one/frps:latest
+    network_mode: "host"
+    restart: always
+    volumes:
+      - ./frps.ini:/frps.ini
